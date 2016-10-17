@@ -30,11 +30,18 @@ public class UR5Controller : MonoBehaviour {
 
     void OnGUI() {
         int boundary = 20;
+
+#if UNITY_EDITOR
         int labelHeight = 20;
+        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = 20;
+#else
+        int labelHeight = 40;
+        GUI.skin.label.fontSize = GUI.skin.box.fontSize = GUI.skin.button.fontSize = 40;
+#endif
         GUI.skin.label.alignment = TextAnchor.MiddleLeft;
         for (int i = 0; i < 6; i++) {
-            GUI.Label(new Rect(boundary, boundary + i * labelHeight, 60, 20), "Joint " + i + ": ");
-            jointValues[i] = GUI.HorizontalSlider(new Rect(boundary + 60, boundary + i * labelHeight + 4, 100, 20), jointValues[i], lowerLimit[i], upperLimit[i]);
+            GUI.Label(new Rect(boundary, boundary + ( i * 2 + 1 ) * labelHeight, labelHeight * 4, labelHeight), "Joint " + i + ": ");
+            jointValues[i] = GUI.HorizontalSlider(new Rect(boundary + labelHeight * 4, boundary + (i * 2 + 1) * labelHeight + labelHeight / 4, labelHeight * 5, labelHeight), jointValues[i], lowerLimit[i], upperLimit[i]);
         }
     }
 
