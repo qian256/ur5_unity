@@ -1,6 +1,6 @@
 UR5 for Augmented Reality
 ===
-Author: [Long Qian](https://longqian.me/aboutme), [Shuyang Chen](https://www.linkedin.com/in/shuyang-shawn-chen-346ab6109)
+Author: [Long Qian](http://longqian.me/aboutme), [Shuyang Chen](https://www.linkedin.com/in/shuyang-shawn-chen-346ab6109)
 
 Date: 2016-10-16
 
